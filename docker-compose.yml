@@ -3,22 +3,6 @@ services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile.dev
+      dockerfile: Dockerfile
     ports:
-      - '3000:3000'
-    volumes:
-      - /app/node_modules
-      - .:/app
-    environment:
-      - CHOKIDAR_USEPOLLING=true
-    # web:
-    #   stdin_open: true
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile.dev
-    volumes:
-      - /app/node_modules
-      - .:/app
-
-# docker-compose down && docker-compose up --build
+      - '80:80'
